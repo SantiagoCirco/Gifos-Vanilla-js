@@ -1,0 +1,119 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: color(nav-bg);
+    border-top: 3px solid color(primary);
+    z-index: 4;
+    &__wrapper {
+        min-height: 110px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    // Switching between desktop's and mobile's logo
+    &__logo--desktop {
+        display: none;
+        @include desktop {
+            display: block;
+        }
+    }
+    &__logo--mobile {
+        display: block;
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__toggler {
+        @include desktop {
+            display: none;
+        }
+    }
+}
+
+.nav {
+    display: none; //will not show in mobile
+    @include desktop {
+        visibility: visible;
+        display: block;
+        width: 500px;
+    }
+    &__list {
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__item :hover {
+        border-bottom: 3px solid color(accent);
+    }
+    &__link:active {
+        color: color(light-grey-1);
+    }
+    &__link:focus {
+        color: color(light-grey-1);
+        outline: none;
+    }
+    &__link--toggler {
+        cursor: pointer;
+    }
+    &__button {
+        @include desktop {
+            border: 1px solid color(primary);
+            padding: 20px;
+            border-radius: 50%;
+        }
+
+        &:hover {
+            background-color: color(primary);
+            color: color(bg-light);
+        }
+
+        &:focus,
+        &:active {
+            background-color: color(navButton-active);
+            border-color: color(navButton-active);
+        }
+    }
+}
+
+.mobile-nav {
+    background-color: color(bg-navMobile);
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    padding-top: 5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 16vh;
+    text-align: center;
+    a {
+        color: White;
+    }
+    a::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 0.6px;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 16px auto;
+    }
+}
+
+.scrolled-navbar {
+    transition: ease-out 200ms;
+    box-shadow: 0 2px 4px 1px color(light-grey-1);
+}
+
+.menu-button {
+    display: block;
+    @include desktop {
+        display: none;
+    }
+}

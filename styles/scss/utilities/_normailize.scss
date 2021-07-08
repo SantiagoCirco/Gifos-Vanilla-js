@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.container{
+    max-width: 90%;
+    margin: auto;
+
+    @include desktop{
+        max-width: 80%;
+    }
+
+    @include large-desktop{
+        max-width: 1400px;
+    }
+}
+
+body{
+    font-family: $montserrat;
+    background-color: color(bg-light);
+}
+
+h1,h2,h3{
+    color: color(primary);
+    line-height: 33px;
+}
+
+h1{
+    font-size: 2.5rem;
+    @include desktop{
+        font-size: 3.5rem;
+    }
+}
+
+h2{
+    font-size: 2rem;
+    @include desktop{
+        font-size: 2.5rem;
+    }
+}
+
+h3{
+    font-size: 1.6rem;
+    @include desktop{
+        font-size: 1.8rem;
+    }
+}
+
+input{
+    border:none;
+    font-family: $roboto;
+}
+
+input:focus{
+    background-color: #fafafa;
+    outline: none;
+    font-family: $roboto;
+}
+
+input:active{
+    font-family: $roboto;
+}
+
+
+button{
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+
+button:focus{
+    color: color(primary);
+    outline: none;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: color(primary);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: $bold;
+}

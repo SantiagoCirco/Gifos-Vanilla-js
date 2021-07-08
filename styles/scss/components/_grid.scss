@@ -1,0 +1,49 @@
+// adaptar para crear una grid genérica en la que voy cambiando el contenido de las tarjetas
+//  puedo reutilizar para favoritos, mis gifs y los resultados.
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+
+     &__header {
+        margin-top: 3vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.not-found{
+    &__box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__text{
+        margin-top: 2em;
+        color: color(accent);
+        max-width: 360px;
+        text-align: center;
+    }
+}
+
+
+
+.grid-item {
+    background-color: red;
+    width: 130px;
+    height: 100px;
+    margin: 4px;
+    @include desktop {
+        width: 240px;
+        height: 200px;
+    }
+    @include large-desktop {
+        width: 260px;
+    }
+}

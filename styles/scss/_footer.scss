@@ -1,0 +1,59 @@
+.footer{
+    border-bottom: 5px solid color(primary);
+    min-height: 196px;
+    @include desktop{
+        min-height: 116px;      
+    }
+    &__wrapper{ 
+        font-size: 1.6rem;
+        text-align: center;
+        font-family: $roboto;
+        @include desktop{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 116px;  
+        }     
+    }
+    &__shareWrapper{
+        margin-top: 3.5em;
+        @include desktop{
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+    }
+    &__copyrights{
+        font-size: 1.5rem;
+        margin-top: 3.5em;
+        color: color(paragraph);
+        @include desktop{
+            margin:0;
+        }
+    }
+}
+
+.shareWrapper{
+    &__icons{
+        max-width: 60%;
+        margin: 1.5em auto;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__text{
+        margin-right: 8px;
+        color: color(paragraph);
+    }
+    &__link{
+        font-size: 2rem;
+        color: color(light-grey-2);
+        padding: 8px;
+        &:hover{
+            color: color(primary);
+        }
+    }
+}
+
+.favorites{
+    min-height: 61.4vh;
+}

@@ -1,0 +1,36 @@
+.searchResults {
+    padding: 32px 0;
+    &__line {
+        margin-top: 1vw;
+        width: 300px;
+        height: 1px;
+        margin: auto;
+        background-color: color(light-grey-2);
+    }
+
+    &__title {
+        margin-bottom: 5vw;
+        margin-top: 1vw;
+        text-align: center;
+    }
+
+    &__masBtn {
+        border: 1px solid color(primary);
+        display: block;
+        padding: 12px 20px;
+        border-radius: 32px;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-family: $montserrat;
+        font-weight: bold;
+        color: color(primary);
+        margin: 4vw auto;
+    }
+}
+
+.favorites__title,
+.my-gifs__title {
+    margin-bottom: 5vw;
+    margin-top: 1vw;
+    text-align: center;
+}

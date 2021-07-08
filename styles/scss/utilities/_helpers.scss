@@ -1,0 +1,133 @@
+//***********************************************************************
+// COLORS :
+//***********************************************************************
+
+:root {
+    --primary-color: #572ee5; // Change to "#FFF" on DARK MODE
+    --accent-color: #50e3c2;
+    --lightGrey-color: #9cafc3;
+    --paragraph-color: black; // Change to "#FFF" on DARK MODE
+    --socialIcons-colors: #cdd6e0;
+    --bgLight-color: #fff; //  Change to "#37383C" on DARK MODE
+    --bgDark-color: #f3f5f8; // Change to "#222326" on DARK MODE
+    --bgNavMobile-color: #572ee5;
+}
+
+[data-theme="dark"] {
+    --primary-color: #fff;
+    --paragraph-color: #fff;
+    --bgLight-color: #37383c;
+    --bgDark-color: #222326;
+    --bgNavMobile-color: #222326;
+}
+
+// Sass map variables for regualar usage.
+$colors: (
+    primary: var(--primary-color),
+    accent: var(--accent-color),
+    headers: var(--primary-color),
+    //h2 y h3
+    subheaders: var(--accent-color),
+    //h4
+    paragraph: var(--paragraph-color),
+    //Regular text
+    light-grey-1: var(--lightGrey-color),
+    //Search text
+    light-grey-2: var(--socialIcons-colors),
+    //Social media icons
+    navButton-active: var(--lightGrey-color),
+    navLinks: var(--primary-color),
+    nav-bg: var(--bgLight-color),
+    bg-light: var(--bgLight-color),
+    bg-dark: var(--bgDark-color),
+    bg-navMobile: var(--bgNavMobile-color),
+    bg-hoveredGif: rgb(87, 46, 229),
+    bg-hoveredGif-btn: var(--lightGrey-color),
+);
+
+// get the color from the "colors" map.
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+//***********************************************************************
+// TEXT
+//***********************************************************************
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap");
+
+// Text fonts:
+$montserrat: "Montserrat", sans-serif;
+$roboto: "Roboto", sans-serif;
+
+// Text weights :
+$regular: 400;
+$bold: 700;
+
+//***********************************************************************
+// MARGIN Y PADDING
+//***********************************************************************
+
+// Main page - Hero
+$mb-heroTitle: 1em;
+$mt-heroSubtitle: 2em;
+$p-heroInput-box: 12px 32px;
+$img-gap: 16px;
+
+//***********************************************************************
+// MEDIA QUERYS
+//***********************************************************************
+
+$large-desktop: 1600px;
+$medium-desktop: 1000px;
+$desktop: 760px;
+$tablet: 460px;
+
+@mixin large-desktop {
+    @media only screen and (min-width:#{$large-desktop}) {
+        @content;
+    }
+}
+
+@mixin medium-desktop {
+    @media only screen and (min-width:#{$medium-desktop}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width:#{$desktop}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width:#{$tablet}) {
+        @content;
+    }
+}
+
+@mixin button {
+    border: 1px solid color(primary);
+    border-radius: 50px;
+    color: color(primary);
+    font-family: $montserrat;
+    font-weight: bold;
+}
+
+.hidden {
+    transition: ease-in 100ms;
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}
+
+.not-visible{
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-in-out 200ms;
+}
+
+.fav {
+    color: color(primary);
+}

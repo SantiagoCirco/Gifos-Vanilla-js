@@ -1,0 +1,29 @@
+@import './utilities/helpers';
+@import './utilities/normailize';
+
+@import './components/search';
+@import './components/card';
+@import './nav';
+@import './hero';
+@import './components/grid';
+@import './search-resuts';
+@import './record';
+@import './fullscreen';
+@import './trending';
+@import './footer';
+
+
+.hidden {
+    transition: ease-in 100ms;
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}
+
+main{
+    height: 200vh;
+    background: linear-gradient(
+        0deg, rgb(218, 185, 179), rgb(218, 185, 79)
+    );
+    width: 100%;
+}

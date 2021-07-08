@@ -1,0 +1,111 @@
+.fullscreen {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.95);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0, 0);
+    transition: ease-in 100ms;
+    &__container {
+        position: relative;
+        @include desktop {
+            width: 60%;
+        }
+        @include medium-desktop {
+            width: 800px;
+        }
+    }
+    &__cancelBtn {
+        cursor: pointer;
+    }
+    &__cancelBtn-box {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 3em;
+    }
+    &__carousel {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__gifBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__img {
+        width: 318px;
+        height: 245px;
+        @include desktop {
+            width: 466px;
+            height: 320px;
+        }
+        @include medium-desktop {
+            width: 695px;
+            height: 385px;
+        }
+    }
+
+    &__info {
+        margin-top: 2em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__text {
+        margin-left: 8px;
+        max-width: 50%;
+    }
+    &__btnsBox {
+        margin-right: 8px;
+    }
+    &__author {
+        margin-bottom: 0.3em;
+        font-size: 1.6rem;
+    }
+    &__title {
+        font-size: 1.5rem;
+    }
+    &__btn {
+        background-color: color(bg-light);
+        margin: 0 4px;
+        border: 1px solid color(light-grey-2);
+        border-radius: 4px;
+        padding: 6px 7px;
+        color: color(primary);
+        font-size: 1.8rem;
+        &:hover {
+            border: 2px solid color(primary);
+            transition: all 200ms ease-out;
+        }
+    }
+}
+
+.expanded {
+    transform: scale(1, 1);
+    transition: ease-in 150ms;
+}
+
+.carousel__btn {
+    display: none;
+    @include desktop {
+        display: inline-block;
+        margin: 0 1.5em;
+        border: 1px solid color(primary);
+        padding: 8px 12px;
+        color: color(primary);
+        font-size: 1.3rem;
+
+        &:hover {
+            background-color: color(primary);
+            color: color(bg-light);
+        }
+    }
+}

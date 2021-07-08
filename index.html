@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/css/main.css">
+    <link rel="shortcut icon" href="./images/logo-desktop.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <title>GIFOS</title>
+</head>
+
+<body>
+
+    <!--============================================================================
+                                        HEADER SECTION
+    ============================================================================-->
+    <header class="header">
+        <div class="header__wrapper container">
+            <a href="#" class="header__link">
+                <img src="./images/logo-desktop.svg" alt="GIFOS logo" class="header__logo header__logo--desktop">
+                <img src="./images/logo-mobile.svg" alt="GIFOS logo" class="header__logo header__logo--mobile">
+            </a>
+            <div class="search hidden">
+                <div class="search__box">
+                    <input type="text" name="search" class="search__input" placeholder="Busca GIFOS y más"
+                        autocomplete="off" id="navbar-search">
+                    <button class="search__button search__button--open">
+                        <img src="./images/search-icon.svg" alt="click here to search">
+                    </button>
+                    <button class="search__button search__button--close hidden" id="navbar-close-button">
+                        <img src="./images/close-icon.svg" alt="click here to close">
+                    </button>
+                </div>
+            </div>
+            <button class="header__menu-toggler">
+                <img src="./images/burger.svg" alt="Click here to open or close Menu" class="menu-button">
+                <img src="./images/close-icon.svg" alt="Click here to open or close Menu"
+                    class="close-menu-button hidden">
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link nav__link--toggler">modo nocturno</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link nav__fav">favoritos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link nav__gifos">mis gifos</a>
+                    </li>
+                    <li class="nav__circular-button">
+                        <a href="#" class="nav__link">
+                            <i class="fas fa-plus nav__button"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--============================================================================
+                                        HERO SECTION
+    ============================================================================-->
+    <section class="hero container">
+        <h1 class="hero__title">Inspírate, busca, guarda, y crea los mejores <span
+                class="hero__title hero__title--accent">gifos</span>
+        </h1>
+        <div class="hero__searchContainer">
+            <img src="./images/hero-cover.svg" alt="ilustración" class="hero__img">
+            <div class="hero__searchWrapper">
+                <div class="hero__searchBox">
+                    <div class="hero__searchIcon hero__searchIcon--active hidden">
+                        <i class="fas fa-search "></i>
+                    </div>
+                    <input type="text" name="search" class="hero__input" id="hero-search"
+                        placeholder="Busca GIFOS y más" autocomplete="off">
+                    <button class="hero-search__button hero-search__button--open">
+                        <img src="./images/search-icon.svg" alt="click here to search">
+                    </button>
+                    <button class="hero-search__button hero-search__button--close hidden" id="hero-close-button">
+                        <img src="./images/close-icon.svg" alt="click here to close">
+                    </button>
+                </div>
+
+                <div class="hero__searchSuggestions hidden">
+                    <ul class="hero__suggestionsList">
+                        <li class="hero__suggestions">
+                            <i class="fas fa-search hero__suggestionsIcon"></i>
+                            <span class="suggestionTitle"></span>
+                        </li>
+                        <li class="hero__suggestions">
+                            <i class="fas fa-search hero__suggestionsIcon"></i>
+                            <span class="suggestionTitle"></span>
+                        </li>
+                        <li class="hero__suggestions">
+                            <i class="fas fa-search hero__suggestionsIcon"></i>
+                            <span class="suggestionTitle"></span>
+                        </li>
+                        <li class="hero__suggestions">
+                            <i class="fas fa-search hero__suggestionsIcon"></i>
+                            <span class="suggestionTitle"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3 class="hero__subtitle">Trending:</h3>
+        <p class="hero__description"></p>
+    </section>
+
+    <!--============================================================================
+                                        FAVORITES SECTION
+        ============================================================================-->
+
+    <section class="favorites hidden">
+        <div class="grid__header">
+            <img src="./images/favoritos-icon.svg" alt="Icono de un corazón">
+            <h2 class="favorites__title">Favoritos</h2>
+        </div>
+        <div class="grid favorites__grid container">
+            <div class="not-found__box hidden" id="liked-not-found">
+                <img class="not-found__img" src="./images/favoritos-sin-contenido.svg" alt="Un corazón ilustrado">
+                <h3 class="not-found__text">"¡Guarda tu primer GIFO en Favoritos
+                    para que se muestre aquí!"</h3>
+            </div>
+        </div>
+    </section>
+
+    <!--============================================================================
+                                            MY GIFS SECTION
+            ============================================================================-->
+
+    <section class="my-gifs hidden" style="min-height: 61.4vh;">
+        <div class="grid__header">
+            <img src="./images/mis-gifos-icon.svg" alt="Icono de un corazón">
+            <h2 class="my-gifs__title">Mis Gifos</h2>
+        </div>
+        <div class="grid gifos__grid container">
+            <div class="not-found__box" id="gifos-not-found">
+                <img class="not-found__img" src="./images/mis-gifos-sin-contenido.svg" alt="Un corazón ilustrado">
+                <h3 class="not-found__text">¡Anímate a crear tu primer GIFO!</h3>
+            </div>
+        </div>
+    </section>
+
+    <!--============================================================================
+                                    SEARCH RESULTS SECTION
+    ============================================================================-->
+
+    <section class="searchResults hidden">
+        <div class="searchResults__line"></div>
+        <h2 class="searchResults__title"></h2>
+        <div class="grid searchResults__grid container">
+            <div class="not-found__box hidden" id="search-not-found">
+                <img class="not-found__img" src="./images/search-not-found.svg" alt="Un corazón ilustrado">
+                <h3 class="not-found__text">Intenta con otra búsqueda.</h3>
+            </div>
+        </div>
+        <button class="searchResults__masBtn hidden">Ver más</button>
+    </section>
+
+    <!--============================================================================
+                                        TRENDING  SECTION
+        ============================================================================-->
+
+    <section class="trending">
+        <h2 class="trending__title">
+            Trending GIFOS
+        </h2>
+        <p class="trending__description">
+            Mirá los últimos <br class="trending__br"> GIFOS de nuestra comunidad.
+        </p>
+        <!-- Carousel container with rail and buttons-->
+        <div class="carousel">
+            <!-- Previous gif Button -->
+            <button class="carousel__btn carousel__btn--prev" id="carouselPrevBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <!-- Carousel rail -->
+            <div class="carousel__wrapper"></div>
+
+            <!-- Next gif Button -->
+            <button class="carousel__btn carousel__btn--next" id="carouselNextBtn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+    <!--============================================================================
+                                        RECORD SECTION
+        ============================================================================-->
+
+    <section class="record hidden">
+        <div class="record__camaraWrapper">
+            <img src="./images/camara.svg" alt="camara ilustrada" class="record__camaraWrapper--cam">
+            <img src="./images/luz-de-camara.svg" alt="luz ilustrada" class="record__camaraWrapper-light">
+        </div>
+        <div class="record__wrapper">
+
+            <div class="record__frame">
+                <div class="frame__insideBorder frame__insideBorder--topLeft"></div>
+                <div class="frame__insideBorder frame__insideBorder--topRight"></div>
+                <div class="frame__insideBorder frame__insideBorder--bottomLeft"></div>
+                <div class="frame__insideBorder frame__insideBorder--bottomRight"></div>
+
+                <div class="record__finish-box hidden">
+                    <div class="record__buttons-box">
+                        <button class="record__finish-button record-download-button">
+                            <i class="fas fa-download record-download-icon"></i>
+                        </button>
+                        <button class="record__finish-button record-link-button">
+                            <i class="fas fa-link record-link-icon"></i>
+                        </button>
+                    </div>
+                    <div class="record__info-box">
+                        <img src="./images/loader.svg" alt="cargando" class="record__loader">
+                        <img src="./images/check.svg" alt="check" class="record__check hidden">
+                        <h3 class="record__text">Estamos subiendo tu GIFO</h3>
+                    </div>
+
+                </div>
+
+                <h2 class="frame__title">Aquí podrás <br> crear tus propios <span
+                        class="frame__title--gifos">GIFOS</span></h2>
+                <p class="frame__desc">¡Crea tu GIFO en sólo 3 pasos! <br>(sólo necesitas una cámara
+                    para grabar un video)</p>
+                <video class="frame__video hidden" id="video"></video>
+                <img class="frame__finishedGif hidden" id="jsGif">
+
+            </div>
+            <div class="record__stepsWrapper">
+                <div class="record__stepBox">1</div>
+                <div class="record__stepBox">2</div>
+                <div class="record__stepBox">3</div>
+                <h4 class="record__subtext hidden">00:00:00</h4>
+                <button class="record__link hidden" id="repeat-recording-button">REPETIR CAPTURA</button>
+            </div>
+            <div class="record__line"></div>
+        </div>
+
+        <button class="record__btn" id="init-recording-button">COMENZAR</button>
+        <button class="record__btn hidden" id="start-recording-button">GRABAR</button>
+        <button class="record__btn hidden" id="stop-recording-button">FINALIZAR</button>
+        <button class="record__btn hidden" id="upload-recording-button">SUBIR GIFO</button>
+
+        <img src="./images/pelicula.svg" alt="cinta ilustrada" class="record__cinta">
+
+    </section>
+
+    <!--============================================================================
+                                        EXPAND SECTION
+        ============================================================================-->
+    <section class="fullscreen">
+        <div class="fullscreen__container">
+            <div class="fullscreen__cancelBtn-box">
+                <button class="fullscreen__cancelBtn">
+                    <img src="./images/close-icon.svg" alt="a menu icon">
+                </button>
+            </div>
+            <div class="fullscreen__carousel">
+                <button class="carousel__btn carousel__btn--prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="fullscreen__gifBox">
+                    <figure>
+                        <img class="fullscreen__img" src="" alt="gif con movimiento">
+                        <figcaption class="fullscreen__info">
+                            <div class="fullscreen__text">
+                                <p class="fullscreen__author">Autor del gif</p>
+                                <h5 class="fullscreen__title">Título del gifff</h5>
+                            </div>
+                            <div class="fullscreen__btnsBox">
+                                <button class="fullscreen__btn expanded-like-button">
+                                    <i class="far fa-heart expanded-like-icon"></i>
+                                </button>
+                                <button class="fullscreen__btn expanded-download-button">
+                                    <i class="fas fa-download expanded-download-icon"></i>
+                                </button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <button class="carousel__btn carousel__btn--next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <!-- Generated dynamically -->
+        </div>
+    </section>
+
+    <!--============================================================================
+                                        FOOTER SECTION
+        ============================================================================-->
+    <footer class="footer">
+
+        <div class="footer__wrapper container">
+            <div class="footer__shareWrapper">
+                <p class="shareWrapper__text"> Comartir en:</p>
+                <div class="shareWrapper__icons">
+                    <a href="#" class="shareWrapper__link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="shareWrapper__link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="shareWrapper__link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="footer__copyrights">© GIFOS 2020 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!--============================================================================
+                                        scripts
+        ============================================================================-->
+
+    <script src="./src/utilities/class-names.js"></script>
+    <script src="./src/utilities/dom-elements.js"></script>
+    <script src="./src/utilities/helpers.js"></script>
+    <script src="./src/utilities/window.js"></script>
+
+    <script src="./src/utilities/event-delegates.js"></script>
+
+    <script src="./src/navigation/navigation.js"></script>
+    <script src="./src/navigation/burger-menu.js"></script>
+
+    <script src="./src/dark-mode.js"></script>
+    <script src="./src/recorder.js"></script>
+    <script src="./src/trending.js"></script>
+    <script src="./src/search.js"></script>
+    <script src="./src/app.js"></script>
+</body>
+
+</html>

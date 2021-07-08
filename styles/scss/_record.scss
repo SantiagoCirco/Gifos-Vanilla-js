@@ -1,0 +1,193 @@
+.record {
+    display: none;
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
+    &__camaraWrapper {
+        display: none;
+        @include medium-desktop {
+            display: block;
+            position: absolute;
+            top: 160px;
+            left: 40px;
+        }
+        &--cam {
+            transform: translateY(15px) translateX(3px);
+        }
+    }
+    &__cinta {
+        position: absolute;
+        right: 80px;
+        bottom: 50px;
+    }
+    &__frame {
+        position: relative;
+        width: 688px;
+        height: 390px;
+        margin: 0 48px;
+        padding: 100px;
+        border: 1px solid color(primary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__stepsWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        position: relative;
+    }
+    &__stepBox {
+        width: 32px;
+        height: 32px;
+        margin: 0 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid color(primary);
+        color: color(primary);
+        font-size: 1.8rem;
+        font-family: $roboto;
+    }
+    &__subtext {
+        position: absolute;
+        color: color(primary);
+        font-size: 2em;
+        right: 70px;
+        top: 32px;
+    }
+    &__link {
+        position: absolute;
+        right: 50px;
+        top: 32px;
+        font-family: $montserrat;
+        color: color(primary);
+        font-weight: bold;
+        &:hover {
+            border-bottom: 3px solid color(accent);
+        }
+    }
+    &__line {
+        width: 100%;
+        height: 6px;
+        border-radius: 6px;
+        background-color: color(primary);
+        margin-bottom: 1.5em;
+    }
+    &__btn {
+        @include button;
+        width: 130px;
+        height: 50px;
+        margin-bottom: 4vw;
+    }
+
+    &__finish-box {
+        position: absolute;
+        top: 0;
+        left: 8vw;
+        right: 8vw;
+        margin: 5.4vw;
+        background-color: rgba(color(bg-hoveredGif), 0.6);
+        height: 62%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+    &__buttons-box {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        height: 20%;
+        margin: 8px 4px;
+    }
+    &__info-box {
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__text {
+        color: white;
+        font-size: 1.2rem;
+    }
+    &__finish-button {
+        border: 1px solid color(light-grey-2);
+        padding: 4px 8px;
+        background-color: white;
+        border-radius: 6px;
+        margin-right: 8px;
+        color: color(primary);
+    }
+    &__loader {
+        animation: loading 2s  infinite alternate;
+
+    }
+}
+
+.frame {
+    &__title {
+        text-align: center;
+    }
+    &__title--gifos {
+        color: color(accent);
+    }
+    &__desc {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-top: 0.8em;
+        line-height: 29px;
+        font-family: $roboto;
+    }
+    &__insideBorder {
+        width: 27px;
+        height: 25px;
+        position: absolute;
+        &--topLeft {
+            border-top: 3px solid color(accent);
+            border-left: 3px solid color(accent);
+            top: 16px;
+            left: 16px;
+        }
+        &--topRight {
+            border-top: 3px solid color(accent);
+            border-right: 3px solid color(accent);
+            top: 16px;
+            right: 16px;
+        }
+        &--bottomLeft {
+            border-bottom: 3px solid color(accent);
+            border-left: 3px solid color(accent);
+            bottom: 16px;
+            left: 16px;
+        }
+        &--bottomRight {
+            border-bottom: 3px solid color(accent);
+            border-right: 3px solid color(accent);
+            bottom: 16px;
+            right: 16px;
+        }
+    }
+}
+
+.stepActive {
+    background-color: color(primary);
+    color: white;
+}
+
+@keyframes loading {
+    from {
+        transform: rotateZ(0deg) scale(1,1);
+    }
+    to {
+        transform: rotateZ(360deg) scale(1.2,1.2);
+    }
+}
