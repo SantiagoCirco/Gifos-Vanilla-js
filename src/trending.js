@@ -36,7 +36,7 @@ function createGifTrendingCard(gif, parent) {
     const expandIconClassName = setClassName.card.expandButton.default;
 
     parent.innerHTML += `
-        <div class=" carousel__imgWrapper" id=${gif.id}>
+        <div class=" carousel__imgWrapper" id="${gif.id}">
             <img class=" carousel__img" src="${gif.images.fixed_height.url}" alt="${gif.title}" >
             <div class="carousel__imgInfo">
                 <div class="imgInfo__btnsBox">

@@ -86,9 +86,13 @@ const setClassName = {
                 default: 'record__check hidden',
                 whenFinished: 'record__check'
             },
-            Loader:{
+            loader:{
                 default:'record__loader hidden',
                 whenLoading: 'record__loader'   
+            },
+            buttons:{
+                default: 'record__buttons-box not-visible',
+                whenLoaded: 'record__buttons-box'
             }
         },
         initButton: {

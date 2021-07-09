@@ -1,6 +1,6 @@
 .fullscreen {
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: color(bg-light);
     height: 100vh;
     top: 0;
     left: 0;
@@ -69,9 +69,11 @@
     &__author {
         margin-bottom: 0.3em;
         font-size: 1.6rem;
+        color: color(paragraph);
     }
     &__title {
         font-size: 1.5rem;
+        color: color(paragraph);
     }
     &__btn {
         background-color: color(bg-light);

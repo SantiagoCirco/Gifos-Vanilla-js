@@ -82,13 +82,14 @@ async function expandGifById(id) {
     expandedImage.src = gif.images.fixed_height.url;
     expandedAuthor.textContent = gif.username ? gif.username : '';
     expandedTitle.textContent = gif.title;
-    // CREAR BOTONES DINAMICAMENTE Y COLOCARLOS DENTRO DEL BOX CON SU ID
-
     const itHasAlreadyBeenLiked = FAVORITES.find(fav => fav === id) !== undefined;
     expandedLikeIcon.className = itHasAlreadyBeenLiked ?
         setClassName.fullscreen.likeButton.whenLiked :
         setClassName.fullscreen.likeButton.default;
     expandedLikeIcon.id = 'expanded-like-icon'+id;
+    expandedLikeButton.id = 'expanded-like-button'+id;
+    expandedDownloadIcon.id = 'expanded-download-icon'+id;
+    expandedDownloadButton.id = 'expanded-download-button'+id;
 }
 
 
@@ -198,7 +199,7 @@ function handleDownloadButtonEventsWhenExpanded(e){
     const isDownloadButtonEvent = e.target.classList[1] === 'expanded-download-button';
     if (e.target && isDownloadIconEvent || isDownloadIconWhenLikedEvent || isDownloadButtonEvent) {
         const id = e.target.id.replace(isDownloadButtonEvent ? 'expanded-download-button' : 'expanded-download-icon', '');
-        console.log(id);
+        console.log('El id es :' + id);
         downloadGifById(id);
     }
 }

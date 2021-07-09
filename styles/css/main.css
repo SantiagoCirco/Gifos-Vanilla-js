@@ -759,12 +759,11 @@ a {
 
 .record__finish-box {
   position: absolute;
-  top: 0;
-  left: 8vw;
-  right: 8vw;
-  margin: 5.4vw;
+  left: 50%;
+  margin-left: -35%;
+  width: 480px;
+  height: 320px;
   background-color: rgba(87, 46, 229, 0.6);
-  height: 62%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -780,7 +779,7 @@ a {
 }
 
 .record__info-box {
-  margin-top: 32px;
+  margin-top: 64px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -819,6 +818,12 @@ a {
   margin-top: 0.8em;
   line-height: 29px;
   font-family: "Roboto", sans-serif;
+}
+
+.frame__finishedGif {
+  width: 480px;
+  height: 320px;
+  object-fit: fill;
 }
 
 .frame__insideBorder {
@@ -871,7 +876,7 @@ a {
 
 .fullscreen {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--bgLight-color);
   height: 100vh;
   top: 0;
   left: 0;
@@ -962,10 +967,12 @@ a {
 .fullscreen__author {
   margin-bottom: 0.3em;
   font-size: 1.6rem;
+  color: var(--paragraph-color);
 }
 
 .fullscreen__title {
   font-size: 1.5rem;
+  color: var(--paragraph-color);
 }
 
 .fullscreen__btn {

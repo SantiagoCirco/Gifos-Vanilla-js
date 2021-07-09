@@ -85,33 +85,26 @@ function reloadAllSectionsToDefault() {
 
 headerLinkLogo.addEventListener('click', () => {
     closeMenuHandler();
-    window.location.href = window.location.href;
+    location.reload();
     pageState.setDefault();
     reloadAllSectionsToDefault();
 });
 
 navbarFavoriteButton.addEventListener('click', e => {
     closeMenuHandler();
-    if (pageState.currentState() !== 'favorite') {
-        pageState.openFavs();
-        showFavoriteSectionAndHideOthers();
-
-    }
+    pageState.openFavs();
+    showFavoriteSectionAndHideOthers();
 });
 
 navbarGifosButton.addEventListener('click', e => {
     closeMenuHandler();
-    if (pageState.currentState() !== 'gifos') {
-        pageState.openGifos();
-        showMyGifosSectionAndHideOthers();
-    }
+    pageState.openGifos();
+    showMyGifosSectionAndHideOthers();
 });
 
 navbarCircularButton.addEventListener('click', e => {
-    if (pageState.currentState() !== 'record') {
-        pageState.openRecord();
-        showRecordSectionAndHideOthers();
-    }
+    pageState.openRecord();
+    showRecordSectionAndHideOthers();
 });
 
 

@@ -10,6 +10,9 @@ let FAVORITES = [];
 let GIFOS = [];
 const gifsAmount = 12;
 let carouselCounter = 0;
+let recorder;
+let currentStep = 0;
+let stream;
 
 function whenSearchingIsActive(doFirst, doSecond) {
     doFirst(); doSecond();
@@ -123,6 +126,6 @@ function _showErrorGifs() {
         username: 'Por favor, intentar de nuevo',
     };
     for (let i = 0; i < gifsAmount; i++) {
-        _createTredingGif(errorGif);
+        createGifTrendingCard(errorGif,gifWrapper);
     }
 }

@@ -53,6 +53,28 @@ const gifosGrid = document.querySelector('.gifos__grid');
 const recordSection = document.querySelector('.record');
 const recordCameraIcon = document.querySelector('.record__camaraWrapper');
 const recordCintaIcon = document.querySelector('.record__cinta');
+const recordFinishLoadingBox = document.querySelector('.record__finish-box');
+const recordFinishButtonBox = document.querySelector('.record__buttons-box');
+const recordFinishLoadingText = document.querySelector('.record__text');
+const recordLoadingIcon = document.querySelector('.record__loader');
+const recordCheckIcon = document.querySelector('.record__check');
+const recordDownloadButton = document.querySelector('.record-download-button');
+const recordDownloadIcon = document.querySelector('.record-download-icon');
+const recordLinkButton = document.querySelector('.record-link-button');
+const recordLinkIcon = document.querySelector('.record-link-icon');
+
+const initRecordingButton = document.getElementById('init-recording-button');
+const startRecordingButton = document.getElementById('start-recording-button');
+const repeatRecordingButton = document.getElementById('repeat-recording-button');
+const stopRecordingButton = document.getElementById('stop-recording-button');
+const uploadRecordingButton = document.getElementById('upload-recording-button');
+
+const stepTitle = document.querySelector('.frame__title');
+const stepSubtitle = document.querySelector('.frame__desc');
+const timer = document.querySelector('.record__subtext');
+const stepsNumber = document.getElementsByClassName('record__stepBox');
+const video = document.getElementById('video');
+const recordedGif = document.getElementById('jsGif');
 
 //7. fullscreen 
 const fullscreen = document.querySelector('.fullscreen');

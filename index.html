@@ -151,7 +151,7 @@
 
     <section class="searchResults hidden">
         <div class="searchResults__line"></div>
-        <h2 class="searchResults__title"></h2>
+        <h2 class="searchResults__title">.</h2>
         <div class="grid searchResults__grid container">
             <div class="not-found__box hidden" id="search-not-found">
                 <img class="not-found__img" src="./images/search-not-found.svg" alt="Un corazón ilustrado">
@@ -209,10 +209,10 @@
 
                 <div class="record__finish-box hidden">
                     <div class="record__buttons-box">
-                        <button class="record__finish-button record-download-button">
+                        <button class="record__finish-button | record-download-button">
                             <i class="fas fa-download record-download-icon"></i>
                         </button>
-                        <button class="record__finish-button record-link-button">
+                        <button class="record__finish-button | record-link-button">
                             <i class="fas fa-link record-link-icon"></i>
                         </button>
                     </div>
@@ -229,7 +229,7 @@
                 <p class="frame__desc">¡Crea tu GIFO en sólo 3 pasos! <br>(sólo necesitas una cámara
                     para grabar un video)</p>
                 <video class="frame__video hidden" id="video"></video>
-                <img class="frame__finishedGif hidden" id="jsGif">
+                <img class="frame__finishedGif hidden" id="jsGif" alt="Tu GIFO" src="https://cdn3.vectorstock.com/i/thumb-large/35/52/placeholder-rgb-color-icon-vector-32173552.jpg">
 
             </div>
             <div class="record__stepsWrapper">
@@ -267,7 +267,7 @@
                 </button>
                 <div class="fullscreen__gifBox">
                     <figure>
-                        <img class="fullscreen__img" src="" alt="gif con movimiento">
+                        <img class="fullscreen__img" src="https://cdn3.vectorstock.com/i/thumb-large/35/52/placeholder-rgb-color-icon-vector-32173552.jpg" alt="gif con movimiento">
                         <figcaption class="fullscreen__info">
                             <div class="fullscreen__text">
                                 <p class="fullscreen__author">Autor del gif</p>
@@ -327,7 +327,6 @@
     <script src="./src/dark-mode.js"></script>
     <script src="./src/recorder.js"></script>
     <script src="./src/trending.js"></script>
-    <script src="./src/search.js"></script>
     <script src="./src/app.js"></script>
 </body>
 
